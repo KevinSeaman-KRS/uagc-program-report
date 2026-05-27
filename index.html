@@ -44,6 +44,42 @@ h1 { color: var(--uagc-dark); font-size: 1.5rem; font-weight: 700; margin-bottom
 .tab-content.active { display: block; }
 .tab-panel { border: 1px solid var(--border); border-radius: 0 6px 6px 6px; background: var(--card); padding: 0.65rem 0.75rem; }
 
+/* Organization navigation tab */
+.org-nav-intro { margin-bottom: 0.65rem; }
+.org-nav-jumps {
+  font-size: 0.78rem; line-height: 1.5; margin-bottom: 0.85rem;
+  padding: 0.5rem 0.65rem; background: var(--surface-alt); border-radius: 4px;
+}
+.org-nav-jumps-label { color: var(--muted); font-weight: 600; }
+.org-nav-jumps a { color: var(--link); text-decoration: none; font-weight: 500; }
+.org-nav-jumps a:hover { text-decoration: underline; }
+.org-nav-tree { font-size: 0.82rem; line-height: 1.45; }
+.org-nav-tree details { margin: 0 0 0.35rem 0.25rem; }
+.org-nav-dean > summary {
+  font-weight: 700; color: var(--uagc-dark); font-size: 0.95rem;
+  cursor: pointer; padding: 0.35rem 0.25rem;
+}
+.org-nav-ad > summary {
+  font-weight: 600; color: var(--text); font-size: 0.88rem;
+  cursor: pointer; padding: 0.25rem 0.25rem 0.25rem 0.75rem;
+}
+.org-nav-count { font-weight: 500; color: var(--muted); font-size: 0.78em; }
+.org-nav-dh-block { margin: 0.2rem 0 0.5rem 1.5rem; }
+.org-nav-dh {
+  font-weight: 600; color: var(--uagc-dark); font-size: 0.8rem;
+  margin: 0.35rem 0 0.2rem; padding-left: 0.5rem;
+  border-left: 3px solid var(--uagc-red);
+}
+.org-nav-programs {
+  list-style: none; margin: 0 0 0.35rem; padding: 0 0 0 1rem;
+}
+.org-nav-programs li { margin: 0.12rem 0; }
+.org-nav-programs a { color: var(--link); text-decoration: none; }
+.org-nav-programs a:hover { text-decoration: underline; }
+.org-nav-unmapped { margin-top: 1rem; }
+.org-nav-unmapped > summary { font-weight: 600; color: var(--muted); cursor: pointer; }
+.org-nav-empty { color: var(--muted); font-size: 0.85rem; }
+
 /* Tables */
 table { width: 100%; border-collapse: collapse; font-size: 0.8rem; line-height: 1.3; }
 th { background: var(--uagc-dark); color: white; padding: 0.45rem 0.55rem; text-align: left; position: sticky; top: 0; z-index: 2; white-space: nowrap; font-weight: 600; font-size: 0.72rem; }
@@ -502,6 +538,7 @@ tr:hover { background: rgba(0, 118, 168, 0.06); }
             <div class="tab active" onclick="switchTab('totals')">Totals</div>
             <div class="tab" onclick="switchTab('undergrad')">Undergraduate (38)</div>
             <div class="tab" onclick="switchTab('grad')">Graduate (22)</div>
+            <div class="tab" onclick="switchTab('organization')">Organization</div>
         </div>
         <div class="tab-panel">
 <div id="tab-totals" class="tab-content active">
@@ -605,6 +642,133 @@ tr:hover { background: rgba(0, 118, 168, 0.06); }
 <tr class="matrix-row-data"><td>22</td><td class="matrix-program" title="MPS in Leadership">MPS in Leadership</td><td>Business</td><td class="link-cell"><a href="#mps-in-leadership">Detail</a><a href="https://www.uagc.edu/online-degrees/masters/leadership" target="_blank">Web</a></td><td>0</td><td>0</td><td>0</td><td>0%</td><td>0.0%</td><td><span class="chg-prior chg-new">NEW</span></td><td class="matrix-col-sep">—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="matrix-col-sep">—</td><td>—</td><td>—</td><td>—</td></tr>
 </tbody></table>
 </div>
+</div>
+<div id="tab-organization" class="tab-content">
+<p class="matrix-legend org-nav-intro"><strong>Dean → associate dean → department head → program.</strong> Expand or collapse sections; links jump to program detail pages below. Source: Program Alignment List workbook.</p>
+<div class="org-nav-jumps">
+<span class="org-nav-jumps-label">Level rollups:</span> <a href="#total-undergraduate">Total undergraduate</a> · <a href="#total-graduate">Total graduate</a>
+<span class="org-nav-jumps-label"> · Placeholders:</span> <a href="#undecided-inquiry-placeholders">Undecided inquiry placeholders</a>
+<span class="org-nav-jumps-label"> · Sections:</span> <a href="#undergraduate-program-details">All undergraduate details</a> · <a href="#graduate-program-details">All graduate details</a>
+</div>
+<div class="org-nav-tree">
+<details class="org-nav-dean" open><summary>Justin Harrison <span class="org-nav-count">(7 programs)</span></summary>
+<details class="org-nav-ad" open><summary>Heidi Smith-Interim <span class="org-nav-count">(3)</span></summary>
+<div class="org-nav-dh-block"><div class="org-nav-dh">Heidi Smith</div>
+<ul class="org-nav-programs">
+<li><a href="#ba-in-business-leadership">BA in Business Leadership</a></li>
+<li><a href="#dps-in-organizational-leadership">DPS in Organizational Leadership</a></li>
+<li><a href="#mps-in-leadership">MPS in Leadership</a></li>
+</ul></div>
+</details>
+<details class="org-nav-ad" open><summary>Mingzhen Bao <span class="org-nav-count">(4)</span></summary>
+<div class="org-nav-dh-block"><div class="org-nav-dh">Mingzhen Bao</div>
+<ul class="org-nav-programs">
+<li><a href="#ba-in-communication-studies">BA in Communication Studies</a></li>
+<li><a href="#ba-in-liberal-arts">BA in Liberal Arts</a></li>
+<li><a href="#ba-in-social-science">BA in Social Science</a></li>
+<li><a href="#ba-in-sociology">BA in Sociology</a></li>
+</ul></div>
+</details>
+</details>
+<details class="org-nav-dean" open><summary>Tony Farrell <span class="org-nav-count">(52 programs)</span></summary>
+<details class="org-nav-ad" open><summary>Allison Rief <span class="org-nav-count">(13)</span></summary>
+<div class="org-nav-dh-block"><div class="org-nav-dh">Kelly Olson-Stewart</div>
+<ul class="org-nav-programs">
+<li><a href="#ba-in-education-studies">BA in Education Studies</a></li>
+<li><a href="#ba-in-instructional-design">BA in Instructional Design</a></li>
+<li><a href="#ma-in-education">MA in Education</a></li>
+<li><a href="#ma-in-special-education">MA in Special Education</a></li>
+<li><a href="#ma-in-teaching-and-learning-with-technology">MA in Teaching and Learning with Technology</a></li>
+<li><a href="#ms-in-instructional-design-and-technology">MS in Instructional Design and Technology</a></li>
+<li><a href="#post-baccalaureate-teaching-certificate--elementary-education">Post Baccalaureate Teaching Certificate - Elementary Education</a></li>
+</ul></div>
+<div class="org-nav-dh-block"><div class="org-nav-dh">Stephanie Heald</div>
+<ul class="org-nav-programs">
+<li><a href="#aa-in-early-childhood-education">AA in Early Childhood Education</a></li>
+<li><a href="#ba-in-child-development">BA in Child Development</a></li>
+<li><a href="#ba-in-early-childhood-development-with-differentiated-instruction">BA in Early Childhood Development with Differentiated Instruction</a></li>
+<li><a href="#ba-in-early-childhood-education">BA in Early Childhood Education</a></li>
+<li><a href="#ba-in-early-childhood-education-administration">BA in Early Childhood Education Administration</a></li>
+<li><a href="#ma-in-early-childhood-education-leadership">MA in Early Childhood Education Leadership</a></li>
+</ul></div>
+</details>
+<details class="org-nav-ad" open><summary>Charlie Minnick <span class="org-nav-count">(9)</span></summary>
+<div class="org-nav-dh-block"><div class="org-nav-dh">Eric Mapp</div>
+<ul class="org-nav-programs">
+<li><a href="#aa-in-business">AA in Business</a></li>
+<li><a href="#ba-in-business-administration">BA in Business Administration</a></li>
+<li><a href="#ba-in-business-economics">BA in Business Economics</a></li>
+<li><a href="#master-of-business-administration">Master of Business Administration</a></li>
+</ul></div>
+<div class="org-nav-dh-block"><div class="org-nav-dh">James Moore</div>
+<ul class="org-nav-programs">
+<li><a href="#aa-in-organizational-management">AA in Organizational Management</a></li>
+<li><a href="#ba-in-human-resources-management">BA in Human Resources Management</a></li>
+<li><a href="#ba-in-organizational-management">BA in Organizational Management</a></li>
+<li><a href="#ma-in-organizational-management">MA in Organizational Management</a></li>
+<li><a href="#master-of-human-resource-management">Master of Human Resource Management</a></li>
+</ul></div>
+</details>
+<details class="org-nav-ad" open><summary>Jennifer Myers <span class="org-nav-count">(5)</span></summary>
+<div class="org-nav-dh-block"><div class="org-nav-dh">Jennifer Myers</div>
+<ul class="org-nav-programs">
+<li><a href="#aa-in-military-studies">AA in Military Studies</a></li>
+<li><a href="#ba-in-homeland-security-and-emergency-management">BA in Homeland Security and Emergency Management</a></li>
+<li><a href="#ba-in-social-and-criminal-justice">BA in Social and Criminal Justice</a></li>
+<li><a href="#bs-in-cyber-data-security-technology">BS in Cyber &amp; Data Security Technology</a></li>
+<li><a href="#ms-in-criminal-justice">MS in Criminal Justice</a></li>
+</ul></div>
+</details>
+<details class="org-nav-ad" open><summary>Rochelle Robinson <span class="org-nav-count">(13)</span></summary>
+<div class="org-nav-dh-block"><div class="org-nav-dh">Avisha Sadeghinejad</div>
+<ul class="org-nav-programs">
+<li><a href="#ba-in-marketing">BA in Marketing</a></li>
+<li><a href="#ba-in-operations-management-analysis">BA in Operations Management &amp; Analysis</a></li>
+<li><a href="#ba-in-project-management">BA in Project Management</a></li>
+<li><a href="#ba-in-supply-chain-management">BA in Supply Chain Management</a></li>
+</ul></div>
+<div class="org-nav-dh-block"><div class="org-nav-dh">Karen Ivy</div>
+<ul class="org-nav-programs">
+<li><a href="#ba-in-business-information-systems">BA in Business Information Systems</a></li>
+<li><a href="#bs-in-computer-software-technology">BS in Computer Software Technology</a></li>
+<li><a href="#bs-in-information-technology">BS in Information Technology</a></li>
+<li><a href="#master-of-information-systems-management">Master of Information Systems Management</a></li>
+<li><a href="#ms-in-technology-management">MS in Technology Management</a></li>
+</ul></div>
+<div class="org-nav-dh-block"><div class="org-nav-dh">Susan Gould</div>
+<ul class="org-nav-programs">
+<li><a href="#ba-in-accounting">BA in Accounting</a></li>
+<li><a href="#ba-in-finance">BA in Finance</a></li>
+<li><a href="#master-of-accountancy">Master of Accountancy</a></li>
+<li><a href="#ms-in-finance">MS in Finance</a></li>
+</ul></div>
+</details>
+<details class="org-nav-ad" open><summary>Yvonne Lozano <span class="org-nav-count">(12)</span></summary>
+<div class="org-nav-dh-block"><div class="org-nav-dh">Cara Metz</div>
+<ul class="org-nav-programs">
+<li><a href="#ba-in-applied-behavioral-science">BA in Applied Behavioral Science</a></li>
+<li><a href="#ba-in-psychology">BA in Psychology</a></li>
+<li><a href="#ma-in-psychology">MA in Psychology</a></li>
+</ul></div>
+<div class="org-nav-dh-block"><div class="org-nav-dh">Christine McMahon</div>
+<ul class="org-nav-programs">
+<li><a href="#ba-in-health-human-services">BA in Health &amp; Human Services</a></li>
+<li><a href="#ba-in-health-and-wellness">BA in Health and Wellness</a></li>
+<li><a href="#ba-in-health-care-administration">BA in Health Care Administration</a></li>
+<li><a href="#bs-in-health-information-management">BS in Health Information Management</a></li>
+<li><a href="#bs-in-nursing">BS in Nursing</a></li>
+<li><a href="#ma-in-health-care-administration">MA in Health Care Administration</a></li>
+<li><a href="#ma-in-human-services">MA in Human Services</a></li>
+<li><a href="#master-of-public-health">Master of Public Health</a></li>
+<li><a href="#ms-in-health-informatics-and-analytics">MS in Health Informatics and Analytics</a></li>
+</ul></div>
+</details>
+</details>
+</div>
+<details class="org-nav-unmapped"><summary>Programs without alignment mapping (1)</summary>
+<ul class="org-nav-programs">
+<li><a href="#undecided--masters">Undecided - Masters</a></li>
+</ul></details>
 </div>
         </div>
     </div>
